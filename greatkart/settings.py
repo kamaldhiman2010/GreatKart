@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+from django.contrib.messages import constants as messages
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -133,12 +133,22 @@ STATICFILES_DIRS=[
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR /'media'
 
-from django.contrib.messages import constants as messages
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 MESSAGE_TAGS={
-    messages.ERROR:'danger',
+    messages.ERROR :'danger',
 }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#SMTP Configuration
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='kamaldhiman2010@gmail.com'
+EMAIL_HOST_PASSWORD='kamal@123aviq'
+EMAIL_USE_TLS=True
+
+
+
+
